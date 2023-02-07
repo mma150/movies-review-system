@@ -54,6 +54,7 @@ public class UserController {
 		return new ResponseEntity<>(userService.getUserByEmail(email),HttpStatus.OK);
 	}
 	
+	//delete user by id
 	@DeleteMapping("/{id}")
 	public ResponseEntity<List> deleteUserById(@PathVariable Long id) throws Exception{
 		List lists = new ArrayList<>();
@@ -62,6 +63,7 @@ public class UserController {
 		return new ResponseEntity<>(lists,HttpStatus.OK);
 	}
 	
+	//update user details
 	@PutMapping("/{id}")
 	public ResponseEntity<UserBean> updateUserId(@PathVariable Long id,@RequestBody UserBean userBean) throws Exception{
 		userBean = userService.updateUser(id, userBean);
